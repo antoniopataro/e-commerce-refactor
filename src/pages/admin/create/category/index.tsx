@@ -1,0 +1,62 @@
+import React, { useRef } from "react";
+
+import { useRouter } from "next/router";
+
+import axios from "axios";
+
+function CreateCategory() {
+  const router = useRouter();
+
+  const categoryRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const category = categoryRef.current?.value;
+
+    if (!category) return;
+
+    const response = await axios.post("http://localhost:3000/api/create/category", { category: category });
+
+    if (response.status === 200) {
+      router.reload();
+      return;
+    }
+  };
+
+  return (
+    <main className="flex flex-col w-screen min-h-screen items-center gap-8 p-16">
+      <span className="text-sm font-semibold text-gray-500">E-Commerce</span>
+      <header className="flex w-1/3 gap-4 text-gray-700">
+        <button onClick={() => router.push("/admin")} className="font-semibold text-2xl text-left">
+          &lt;-
+        </button>
+        <h1 className="font-semibold text-2xl text-left">New Category</h1>
+      </header>
+      <form className="flex flex-col w-1/3 gap-4 text-sm font-medium" noValidate onSubmit={handleSubmit}>
+        <div className="flex flex-col w-full">
+          <label htmlFor="category" className="pb-2">
+            Category
+          </label>
+          <input
+            ref={categoryRef}
+            autoComplete="off"
+            type="text"
+            id="category"
+            className="w-full px-4 py-2 ring-1 ring-gray-300 outline-none rounded bg-transparent font-normal transition-all focus:ring-violet-700"
+          />
+        </div>
+        <div className="flex w-full justify-end gap-4 pt-4">
+          <button type="button" onClick={() => router.push("/admin")} className="px-4 py-2 rounded bg-violet-100">
+            Cancel
+          </button>
+          <button type="submit" className="px-4 py-2 rounded bg-violet-700 text-white">
+            Add
+          </button>
+        </div>
+      </form>
+    </main>
+  );
+}
+
+export default CreateCategory;

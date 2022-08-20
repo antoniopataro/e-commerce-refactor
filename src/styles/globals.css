@@ -1,0 +1,43 @@
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter var", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  font-family: "Inter var", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#notebook a {
+  color: #008fd0;
+
+  transition: color 0.15s ease;
+}
+
+#notebook a:hover {
+  color: blue;
+}
+
+tag {
+  color: #008fd0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
