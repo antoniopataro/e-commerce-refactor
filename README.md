@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+https://user-images.githubusercontent.com/87823281/185764810-21c6f9ec-352d-469f-bc72-ca37d8b33cd3.mp4
 
-## Getting Started
+# E-Commerce Refactor 🛒
 
-First, run the development server:
+This is a refactor of my [fisrt E-Commerce made with NextJS.](https://github.com/antoniopataro/e-commerce)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This time, I tried to really make it a decent Fullstack Application. Used NextJS, PostgreSQL and TailwindCSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies ⚙️
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This is a `NextJS` project. I used `Typescript` as main language, `PostgreSQL` as database and `TailwindCSS` to style.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Also, I used `axios` to make the API requests easier, `jsonwebtoken` to persist user authentication, `uuid` to generate random IDs for users and products and `Prisma` as ORM to manage my `PostgreSQL` database.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div style="display: inline_block" align="center"><br>
+  <a href="https://www.typescriptlang.org/" target="_blank">
+  <img align="center" title="Typescript" alt="Typescript" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045174-aeefe104-3966-491c-8d95-23f43050dbd0.svg"></a>
+  <a href="https://reactjs.org/" target="_blank">
+  <img align="center" title="ReactJS" alt="ReactJS" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045172-a17b3a91-5442-4487-927e-0bd2920458b0.svg"></a>
+  <a href="https://nextjs.org/" target="_blank">
+  <img align="center" title="NextJS" alt="NextJS" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045161-7fb9fce5-a974-4c57-8770-084f35765ef6.svg"></a>
+  <a href="https://www.postgresql.org/" target="_blank">
+  <img align="center" title="PostgreSQL" alt="PostgreSQL" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/185008096-730b7d2b-2e85-4f96-87d6-38398e77477c.svg"></a>
+  <a href="https://www.prisma.io/" target="_blank">
+  <img align="center" title="Prisma" alt="Prisma" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/185008303-c8893e5a-2183-4cc6-9a5a-099958265650.svg"></a>
+  <a href="https://tailwindcss.com/" target="_blank">
+  <img align="center" alt="TailwindCSS" title="TailwindCSS" height="30" width="40" src="https://user-images.githubusercontent.com/87823281/183668264-c44f271e-4719-461f-8112-fee8e558cac0.svg"></a>
+  <a href="https://axios-http.com/" target="_blank">
+     <img align="center" title="Axios" alt="Axios" height="30" width="40" src="https://user-images.githubusercontent.com/87823281/180801007-3da0638a-8941-49e0-93e8-a80440049bd9.svg"></a>
+</div>
