@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-import Sidebar, { Category } from "../components/Sidebar";
 import Header from "../components/Header";
 import Products from "../components/Products";
+import Sidebar, { Category } from "../components/Sidebar";
 
 import { ProductProps } from "../components/Product";
+
+import { NextPageContext } from "next";
 
 import axios from "axios";
 
@@ -19,7 +21,7 @@ function Home({ products, categories }: Props) {
   return (
     <main className="flex flex-col w-screen h-screen font-medium text-sm text-text">
       <Header setShowSidebar={setShowSidebar} products={products} />
-      <main className="flex w-full h-full">
+      <main className="flex w-full h-fit">
         <Sidebar showSidebar={showSidebar} categories={categories} />
         <Products showSidebar={showSidebar} products={products} />
       </main>
@@ -27,8 +29,15 @@ function Home({ products, categories }: Props) {
   );
 }
 
-export async function getServerSideProps() {
-  const products = await axios.get("http://localhost:3000/api/products");
+export async function getServerSideProps(context: NextPageContext) {
+  const { page } = context.query;
+
+  const products = await axios.get("http://localhost:3000/api/products", {
+    params: {
+      take: 10,
+      skip: 10 * (Number(page) - 1),
+    },
+  });
   const categories = await axios.get("http://localhost:3000/api/categories");
 
   return {
