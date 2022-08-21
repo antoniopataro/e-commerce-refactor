@@ -25,19 +25,19 @@ function Wishlist({ products }: Props) {
   };
 
   return (
-    <main className="flex flex-col w-screen h-screen items-center font-medium text-sm text-text">
+    <main className="flex flex-col w-screen h-full items-center font-medium text-sm text-text">
       <Header products={products} />
       <main className="flex flex-col w-2/3 h-full gap-8 py-8">
         <header className="flex">
           <h1 className="w-full text-left font-black text-2xl text-gray-700">Wishlist</h1>
         </header>
-        <ul className="flex flex-wrap justify-start gap-8 overflow-scroll">
+        <ul className="grid h-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-start gap-8 overflow-scroll">
           {wishlist.length > 0 ? (
             wishlist.map((product) => (
               <li
                 key={product.id}
                 onClick={() => router.push(`/product/${product.id}`)}
-                className="relative flex flex-col w-64 h-96 justify-between overflow-hidden rounded-2xl border-[1px] border-gray-300 bg-gray-100 cursor-pointer transition-colors hover:bg-gray-200"
+                className={`relative flex flex-col w-full h-fit justify-between overflow-hidden rounded-2xl border-[1px] border-gray-300 bg-gray-100 cursor-pointer transition-colors hover:bg-gray-200`}
               >
                 <button
                   onClick={(e) => {
@@ -55,7 +55,7 @@ function Wishlist({ products }: Props) {
                 </div>
                 <div className="flex flex-col w-full justify-between gap-4 p-4 border-t-[1px] border-gray-300 bg-white">
                   <span className="text-base font-semibold">{product.name}</span>
-                  <div className="flex items-end justify-between">
+                  <div className="flex md:flex-col lg:flex-row items-end justify-between gap-2">
                     <span className="text-base font-semibold">${handlePrice(product.price)}</span>
                     <button
                       onClick={(e) => {
@@ -79,7 +79,7 @@ function Wishlist({ products }: Props) {
               </li>
             ))
           ) : (
-            <span className="flex w-full justify-center">
+            <span className="absolute flex justify-center">
               There are no items in your wishlist.&nbsp;
               <button
                 onClick={() => router.push("/")}

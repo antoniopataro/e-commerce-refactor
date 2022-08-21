@@ -86,12 +86,7 @@ function Cart({ products }: Props) {
 
     if (typeof response === "string") return;
 
-    router.push("/checkout", {
-      query: {
-        user: JSON.stringify(response.user),
-        products: JSON.stringify(response.products),
-      },
-    });
+    console.log(response);
   };
 
   const total = cart.reduce((acc, curr) => acc + curr.total, 0);

@@ -33,9 +33,7 @@ function Product({ showSidebar, product }: Props) {
   return (
     <li
       onClick={() => router.push(`/product/${product.id}`)}
-      className={`relative flex flex-col ${
-        showSidebar ? "w-full" : "sm:w-48 sm:h-72"
-      } md:w-64 md:h-96 lg:w-64 lg:h-96 justify-between overflow-hidden rounded-2xl border-[1px] border-gray-300 bg-gray-100 cursor-pointer transition-colors hover:bg-gray-200`}
+      className={`relative flex flex-col w-full h-fit justify-between overflow-hidden rounded-2xl border-[1px] border-gray-300 bg-gray-100 cursor-pointer transition-colors hover:bg-gray-200`}
     >
       <button
         onClick={(e) => {
@@ -59,16 +57,16 @@ function Product({ showSidebar, product }: Props) {
           <img src={product.imageUrl} alt={product.name} title={product.name} />
         </span>
       </div>
-      <div className="flex flex-col w-full h-1/3 justify-between p-4 border-t-[1px] border-gray-300 bg-white">
+      <div className="flex flex-col w-full h-1/3 justify-between gap-4 p-4 border-t-[1px] border-gray-300 bg-white">
         <span className="text-sm md:text-base font-semibold">{product.name}</span>
-        <div className="flex items-end justify-between">
-          <span className="text-sm md:text-base font-semibold">${handlePrice(product.price)}</span>
+        <div className="flex md:flex-col lg:flex-row items-end justify-between gap-2">
+          <span className="text-xl md:text-sm lg:text-base font-semibold">${handlePrice(product.price)}</span>
           <button
             onClick={(e) => {
               e.stopPropagation();
               addToCart(product);
             }}
-            className="group overflow-hidden p-2 lg:p-4 rounded-xl lg:rounded-2xl bg-violet-700 text-white transition-colors hover:bg-violet-800"
+            className="group overflow-hidden p-4 rounded-xl lg:rounded-2xl bg-violet-700 text-white transition-colors hover:bg-violet-800"
           >
             <svg
               className="w-5 h-5 fill-gray-300 transition-colors group-hover:fill-white group-hover:animate-cart"
