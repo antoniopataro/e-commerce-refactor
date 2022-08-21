@@ -1,4 +1,4 @@
-https://user-images.githubusercontent.com/87823281/185764810-21c6f9ec-352d-469f-bc72-ca37d8b33cd3.mp4
+https://user-images.githubusercontent.com/87823281/185812012-8a9070a2-fb4f-49fb-96db-d9beade7f0ab.mp4
 
 # E-Commerce Refactor 🛒
 
