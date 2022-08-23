@@ -66,11 +66,9 @@ function UserProvider({ children }: Props) {
   }, []);
 
   const logIn = async ({ email, password }: LogInProps) => {
-    const response = await axios.get(`http://localhost:3000/api/users/${email}`, {
-      params: {
-        email: email,
-        password: password,
-      },
+    const response = await axios.post(`http://localhost:3000/api/users/`, {
+      email,
+      password,
     });
 
     if (response.status === 200) {
