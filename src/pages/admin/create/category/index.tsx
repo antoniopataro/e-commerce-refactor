@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 
 import { useRouter } from "next/router";
 
@@ -7,16 +7,26 @@ import axios from "axios";
 function CreateCategory() {
   const router = useRouter();
 
-  const categoryRef = useRef<HTMLInputElement>(null);
+  const [category, setCategory] = useState("");
+
+  const fromNameToSlug = (name: string) => {
+    return name
+      .split(" ")
+      .map((s) => {
+        return s.toLowerCase();
+      })
+      .join("-");
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const category = categoryRef.current?.value;
-
     if (!category) return;
 
-    const response = await axios.post("http://localhost:3000/api/create/category", { category: category });
+    const response = await axios.post("http://localhost:3000/api/create/category", {
+      name: category,
+      slug: fromNameToSlug(category),
+    });
 
     if (response.status === 200) {
       router.reload();
@@ -39,13 +49,15 @@ function CreateCategory() {
             Category
           </label>
           <input
-            ref={categoryRef}
             autoComplete="off"
             type="text"
             id="category"
             className="w-full px-4 py-2 ring-1 ring-gray-300 outline-none rounded bg-transparent font-normal transition-all focus:ring-violet-700"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
           />
         </div>
+        <span className="text-gray-500">Slug: {fromNameToSlug(category)}</span>
         <div className="flex w-full justify-end gap-4 pt-4">
           <button type="button" onClick={() => router.push("/admin")} className="px-4 py-2 rounded bg-violet-100">
             Cancel

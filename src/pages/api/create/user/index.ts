@@ -5,6 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 const newUser = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed." });
@@ -12,12 +13,14 @@ const newUser = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const user = req.body;
 
+    const password = await bcrypt.hash(user.password, 10);
+
     const response = await prisma.user.create({
       data: {
         id: user.id,
         name: user.name,
         email: user.email,
-        password: user.password,
+        password: password,
         imageUrl: user.imageUrl,
       },
     });

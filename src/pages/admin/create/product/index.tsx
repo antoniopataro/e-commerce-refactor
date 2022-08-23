@@ -41,7 +41,7 @@ function CreateProduct({ categories }: Props) {
       price: Number(price),
       category: category,
       imageUrl: imageUrl,
-      tags: tags,
+      tags: JSON.stringify(tags.split(" ")),
     });
 
     if (response.status === 200) {
@@ -117,7 +117,11 @@ function CreateProduct({ categories }: Props) {
                 </option>
               ))}
             </select>
-            <button onClick={() => router.push("/admin/create/category")} className="px-4 py-2 rounded bg-violet-100">
+            <button
+              type="button"
+              onClick={() => router.push("/admin/create/category")}
+              className="px-4 py-2 rounded bg-violet-100"
+            >
               Add
             </button>
           </div>

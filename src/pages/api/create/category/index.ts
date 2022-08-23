@@ -8,11 +8,12 @@ const newCategory = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed." });
 
   try {
-    const { category } = req.body;
+    const { name, slug } = req.body;
 
     const response = await prisma.category.create({
       data: {
-        name: category,
+        name: name,
+        slug: slug,
       },
     });
 

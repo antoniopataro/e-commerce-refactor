@@ -76,14 +76,11 @@ function Products() {
                 </div>
                 <p>{product.description}</p>
                 <ul className="flex flex-wrap w-full justify-center gap-2">
-                  {product.tags
-                    .join(" ")
-                    .split(" ")
-                    .map((tag, index) => (
-                      <li key={index} className="flex px-2 py-1 rounded text-gray-500 bg-gray-300 text-xs">
-                        {tag}
-                      </li>
-                    ))}
+                  {product.tags.map((tag, index) => (
+                    <li key={index} className="flex px-2 py-1 rounded text-gray-500 bg-gray-300 text-xs">
+                      {tag}
+                    </li>
+                  ))}
                 </ul>
               </li>
             ))}

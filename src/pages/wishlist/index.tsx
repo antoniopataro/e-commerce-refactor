@@ -17,8 +17,8 @@ interface Props {
 function Wishlist({ products }: Props) {
   const router = useRouter();
 
-  const { wishlist, removeFromWishlist } = useContext(WishlistContext);
   const { addToCart } = useContext(CartContext);
+  const { wishlist, removeFromWishlist } = useContext(WishlistContext);
 
   const handlePrice = (price: number) => {
     return price.toFixed(2);

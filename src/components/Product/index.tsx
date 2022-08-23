@@ -53,7 +53,7 @@ function Product({ showSidebar, product }: Props) {
         </svg>
       </button>
       <div className="flex h-2/3 items-center justify-center">
-        <span className="flex items-center justify-center scale-50">
+        <span className="flex w-fit aspect-square items-center justify-center scale-50">
           <img src={product.imageUrl} alt={product.name} title={product.name} />
         </span>
       </div>

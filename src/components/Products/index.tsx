@@ -6,11 +6,12 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
+import { Category } from "../Sidebar";
 import { ProductProps } from "../Product";
 
 interface Props {
   showSidebar: boolean;
-  category?: string;
+  category?: Category;
   products: ProductProps[];
 }
 
@@ -39,43 +40,7 @@ function Products({ showSidebar, category, products }: Props) {
 
   const formattedTags = formatTags();
 
-  const productsFilteredByTagsAndCategory = () => {
-    if (tags && category) {
-      return products.filter((p) => {
-        if (
-          formattedTags?.every((t) => p.tags.join(" ").split(" ").includes(t)) &&
-          p.categoryName === fromSlugToName(category)
-        ) {
-          return p;
-        }
-        return;
-      });
-    }
-
-    if (tags) {
-      return products.filter((p) => {
-        if (formattedTags?.every((t) => p.tags.join(" ").split(" ").includes(t))) {
-          return p;
-        }
-        return;
-      });
-    }
-
-    if (category) {
-      return products.filter((p) => {
-        if (p.categoryName === fromSlugToName(category)) {
-          return p;
-        }
-        return;
-      });
-    }
-
-    return products;
-  };
-
   const productsFilteredByPrice = () => {
-    const products = productsFilteredByTagsAndCategory();
-
     if (filterByPrice === "low") {
       return products.sort((a, b) => {
         if (a.price < b.price) {
@@ -112,15 +77,13 @@ function Products({ showSidebar, category, products }: Props) {
         {category && (
           <>
             -&gt;
-            <Link href={`/${category}`}>
-              <a className="text-gray-700 transition-colors hover:text-violet-700">{fromSlugToName(category)}</a>
+            <Link href={`/${category.slug}`}>
+              <a className="text-gray-700 transition-colors hover:text-violet-700">{category.name}</a>
             </Link>
           </>
         )}
       </nav>
-      <h1 className="px-8 pt-8 font-black text-2xl text-gray-700">
-        {router.query.category ? fromSlugToName(router.query.category as string) : "Main Page"}
-      </h1>
+      <h1 className="px-8 pt-8 font-black text-2xl text-gray-700">{category ? category.name : "Main Page"}</h1>
       <div className="flex w-full items-center justify-between gap-4 p-8">
         <div className="flex items-center gap-4">
           {formattedTags ? (
@@ -135,7 +98,7 @@ function Products({ showSidebar, category, products }: Props) {
                   onClick={() =>
                     router
                       .push({
-                        pathname: router.query.category ? "/" + router.query.category : "/",
+                        pathname: category ? "/" + category.slug : "/",
                       })
                       .then(() => router.reload())
                   }
@@ -165,14 +128,14 @@ function Products({ showSidebar, category, products }: Props) {
         </div>
       </div>
       <ul
-        className={`grid 
-         md:grid-cols-3 lg:grid-cols-4
-        ${showSidebar ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"} p-8 gap-8 overflow-scroll`}
+        className={`relative grid h-full md:grid-cols-3 lg:grid-cols-4 ${
+          showSidebar ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
+        } p-8 gap-8 overflow-scroll`}
       >
         {filteredProducts?.length > 0 ? (
           filteredProducts.map((product) => <Product key={product.id} showSidebar={showSidebar} product={product} />)
         ) : (
-          <span className="w-full text-center text-gray-700">There are no items matching your filters.</span>
+          <span className="absolute w-full text-center text-gray-700">There are no items matching your filters.</span>
         )}
       </ul>
       <div className="flex w-full items-center justify-center gap-4 px-8 py-16">
@@ -180,7 +143,7 @@ function Products({ showSidebar, category, products }: Props) {
           <button
             onClick={() =>
               router.push({
-                pathname: router.query.category ? "/" + router.query.category : "/",
+                pathname: category ? "/" + category.slug : "/",
                 query: {
                   page: page - 1,
                 },
@@ -194,7 +157,7 @@ function Products({ showSidebar, category, products }: Props) {
         <button
           onClick={() =>
             router.push({
-              pathname: router.query.category ? "/" + router.query.category : "/",
+              pathname: category ? "/" + category.slug : "/",
               query: {
                 page: page,
               },
@@ -204,11 +167,11 @@ function Products({ showSidebar, category, products }: Props) {
         >
           {page}
         </button>
-        {filteredProducts?.length > 0 && (
+        {filteredProducts?.length >= 10 && (
           <button
             onClick={() =>
               router.push({
-                pathname: router.query.category ? "/" + router.query.category : "/",
+                pathname: category ? "/" + category.slug : "/",
                 query: {
                   page: page + 1,
                 },

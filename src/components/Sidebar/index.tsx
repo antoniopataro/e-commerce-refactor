@@ -9,6 +9,7 @@ import { ProductProps } from "../Product";
 export interface Category {
   name: string;
   products: ProductProps[];
+  slug: string;
 }
 
 interface Props {
@@ -19,11 +20,9 @@ interface Props {
 function Sidebar({ showSidebar, categories }: Props) {
   const router = useRouter();
 
-  const [tags, setTags] = useState<string[]>((router.query.tags as string[]) || []);
+  const currentCategory = router.query.category;
 
-  const handleSlugBasedOnCategoryName = (categoryName: string) => {
-    return categoryName.toLowerCase().replace(/ /g, "-");
-  };
+  const [tags, setTags] = useState<string[]>((router.query.tags as string[]) || []);
 
   useEffect(() => {
     if (router.query.category) {
@@ -62,9 +61,11 @@ function Sidebar({ showSidebar, categories }: Props) {
         <span className="text-base font-semibold">Category</span>
         {sortedCategories.map((category) => (
           <a
-            href={`/${handleSlugBasedOnCategoryName(category.name)}`}
+            href={`/${category.slug}`}
             key={category.name}
-            className="w-fit pl-4 text-gray-300 transition-colors hover:text-violet-700"
+            className={`w-fit pl-4 ${
+              (currentCategory as string) === category.slug ? "text-violet-700" : "text-gray-300"
+            } transition-colors hover:text-violet-700`}
           >
             {category.name}
           </a>

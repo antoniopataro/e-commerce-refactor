@@ -4,9 +4,7 @@ import { UserContext } from "../../contexts/UserProvider";
 
 import { useRouter } from "next/router";
 
-import { v4 as uuidv4, validate } from "uuid";
-
-import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 function Signup() {
   const router = useRouter();

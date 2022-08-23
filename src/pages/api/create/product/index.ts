@@ -22,7 +22,7 @@ const newProduct = async (req: NextApiRequest, res: NextApiResponse) => {
           },
         },
         imageUrl: product.imageUrl,
-        tags: product.tags,
+        tags: JSON.parse(product.tags),
       },
     });
 
