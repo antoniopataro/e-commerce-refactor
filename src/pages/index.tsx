@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import Header from "../components/Header";
-import Products from "../components/Products";
-import Sidebar, { Category } from "../components/Sidebar";
+import Header from "@components/Header";
+import Products from "@components/Products";
+import Sidebar, { Category } from "@components/Sidebar";
 
-import { ProductProps } from "../components/Product";
+import { ProductProps } from "@components/Product";
 
 import { NextPageContext } from "next";
 

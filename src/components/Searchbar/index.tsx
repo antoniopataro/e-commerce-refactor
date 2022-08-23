@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useRouter } from "next/router";
 
-import { ProductProps } from "../Product";
+import { ProductProps } from "@components/Product";
 
 interface Props {
   products: ProductProps[];

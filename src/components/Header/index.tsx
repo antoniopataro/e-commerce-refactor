@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
-import Searchbar from "../Searchbar";
+import Searchbar from "@components/Searchbar";
 
-import { ProductProps } from "../Product";
-
-import { UserContext } from "../../contexts/UserProvider";
+import { UserContext } from "@contexts/UserProvider";
 
 import { useRouter } from "next/router";
+
+import { ProductProps } from "@components/Product";
 
 interface Props {
   setShowSidebar?: React.Dispatch<React.SetStateAction<boolean>>;

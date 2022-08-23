@@ -1,14 +1,15 @@
 import React, { useContext, useRef, useState } from "react";
 
-import Header from "../../components/Header";
-import { ProductProps } from "../../components/Product";
+import Header from "@components/Header";
 
-import { CartContext, CartProps } from "../../contexts/CartProvider";
-import { UserContext } from "../../contexts/UserProvider";
+import { CartContext, CartProps } from "@contexts/CartProvider";
+import { UserContext } from "@contexts/UserProvider";
 
 import { useRouter } from "next/router";
 
 import axios from "axios";
+
+import { ProductProps } from "@components/Product";
 
 interface Props {
   products: ProductProps[];

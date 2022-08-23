@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 
-import { ProductProps } from "../components/Product";
+import { ProductProps } from "@components/Product";
 
 import { useRouter } from "next/router";
 

@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 
-import Header from "../../components/Header";
-import { ProductProps } from "../../components/Product";
+import Header from "@components/Header";
 
-import { WishlistContext } from "../../contexts/WishlistProvider";
-import { CartContext } from "../../contexts/CartProvider";
+import { WishlistContext } from "@contexts/WishlistProvider";
+import { CartContext } from "@contexts/CartProvider";
 
 import { useRouter } from "next/router";
 
 import axios from "axios";
+
+import { ProductProps } from "@components/Product";
 
 interface Props {
   products: ProductProps[];

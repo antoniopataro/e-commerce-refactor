@@ -1,6 +1,6 @@
 import { useState, createContext } from "react";
 
-import { ProductProps } from "../components/Product";
+import { ProductProps } from "@components/Product";
 
 interface WishlistContextProps {
   wishlist: ProductProps[];

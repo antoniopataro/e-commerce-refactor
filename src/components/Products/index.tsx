@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import Product from "../Product";
+import Product from "@components/Product";
 
 import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-import { Category } from "../Sidebar";
-import { ProductProps } from "../Product";
+import { Category } from "@components/Sidebar";
+import { ProductProps } from "@components/Product";
 
 interface Props {
   showSidebar: boolean;

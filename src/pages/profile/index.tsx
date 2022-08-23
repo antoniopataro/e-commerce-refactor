@@ -1,13 +1,14 @@
 import React, { useEffect, useContext } from "react";
 
-import Header from "../../components/Header";
-import { ProductProps } from "../../components/Product";
+import Header from "@components/Header";
 
-import { UserContext } from "../../contexts/UserProvider";
+import { UserContext } from "@contexts/UserProvider";
 
 import { useRouter } from "next/router";
 
 import axios from "axios";
+
+import { ProductProps } from "@components/Product";
 
 interface Props {
   products: ProductProps[];

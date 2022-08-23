@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import Checkbox from "../Checkbox";
+import Checkbox from "@components/Checkbox";
 
 import { useRouter } from "next/router";
 
-import { ProductProps } from "../Product";
+import { ProductProps } from "@components/Product";
 
 export interface Category {
   name: string;

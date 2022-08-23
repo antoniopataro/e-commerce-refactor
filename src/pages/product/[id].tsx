@@ -1,12 +1,12 @@
 import { useContext } from "react";
 
-import { CartContext } from "../../contexts/CartProvider";
+import { CartContext } from "@contexts/CartProvider";
 
-import Header from "../../components/Header";
+import Header from "@components/Header";
 
 import axios from "axios";
 
-import { ProductProps } from "../../components/Product";
+import { ProductProps } from "@components/Product";
 
 interface Props {
   product: ProductProps;

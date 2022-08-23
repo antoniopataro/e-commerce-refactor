@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useRouter } from "next/router";
 
-import { ProductProps } from "../../../components/Product";
+import { ProductProps } from "@components/Product";
 
 import axios from "axios";
 

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-import Header from "../components/Header";
-import Products from "../components/Products";
-import Sidebar, { Category } from "../components/Sidebar";
+import Header from "@components/Header";
+import Products from "@components/Products";
+import Sidebar, { Category } from "@components/Sidebar";
 
 import { NextPageContext } from "next";
 import { useRouter } from "next/router";
 
 import axios from "axios";
 
-import { ProductProps } from "../components/Product";
+import { ProductProps } from "@components/Product";
 
 interface Props {
   categories: Category[];

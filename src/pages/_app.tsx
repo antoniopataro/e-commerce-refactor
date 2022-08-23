@@ -1,6 +1,6 @@
-import "../styles/globals.css";
+import "@styles/globals.css";
 import type { AppProps } from "next/app";
-import ContextProvider from "../contexts/ContextProvider";
+import ContextProvider from "@contexts/ContextProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

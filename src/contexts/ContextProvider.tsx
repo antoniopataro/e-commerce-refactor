@@ -1,6 +1,6 @@
-import UserProvider from "./UserProvider";
-import CartProvider from "./CartProvider";
-import WishlistProvider from "./WishlistProvider";
+import UserProvider from "@contexts/UserProvider";
+import CartProvider from "@contexts/CartProvider";
+import WishlistProvider from "@contexts/WishlistProvider";
 
 interface Props {
   children: React.ReactNode;

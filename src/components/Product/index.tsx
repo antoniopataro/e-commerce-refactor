@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
-import { CartContext } from "../../contexts/CartProvider";
-import { WishlistContext } from "../../contexts/WishlistProvider";
+import { CartContext } from "@contexts/CartProvider";
+import { WishlistContext } from "@contexts/WishlistProvider";
 
 import { useRouter } from "next/router";
 

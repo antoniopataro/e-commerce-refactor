@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
 
-import { UserContext } from "../../contexts/UserProvider";
+import { UserContext } from "@contexts/UserProvider";
 
 import { useRouter } from "next/router";
 
