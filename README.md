@@ -2,7 +2,7 @@ https://user-images.githubusercontent.com/87823281/185812012-8a9070a2-fb4f-49fb-
 
 # E-Commerce Refactor 🛒
 
-This is a refactor of [this project](https://github.com/antoniopataro/e-commerce), but as a real fullstack app.
+This is a refactor of [this project](https://github.com/antoniopataro/my-sandbox/tree/main/old-projects/e-commerce), but as a real fullstack app.
 
 This time, I really tried to make a decent application out of it, using a real database. Used NextJS, PostgreSQL and TailwindCSS.
 
