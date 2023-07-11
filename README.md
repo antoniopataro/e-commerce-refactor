@@ -1,31 +1,32 @@
 https://user-images.githubusercontent.com/87823281/185812012-8a9070a2-fb4f-49fb-96db-d9beade7f0ab.mp4
 
-# E-Commerce Refactor 🛒
+# e-commerce refactor 🛒
 
-This is a refactor of [this project](https://github.com/antoniopataro/my-sandbox/tree/main/old-projects/e-commerce), but as a real fullstack app.
+when i first started learning web development, e-commerces were the big thing to test your skills. due to that, i decided to build one myself.
 
-This time, I really tried to make a decent application out of it, using a real database. Used NextJS, PostgreSQL and TailwindCSS.
+this current version is a refactor of one i finished mid-2022, which may be [here.](https://github.com/antoniopataro/my-sandbox/tree/main/old-projects/e-commerce)
 
-## Technologies ⚙️
+in the making, i also took the chance to learn some back-end using real databases, which was a real broken barrier for me.
 
-- `Typescript` [↗](https://www.typescriptlang.org/) as language
-- `NextJS` [↗](https://nextjs.org/) as framwork
-- `PostgreSQL` [↗](https://www.postgresql.org/) as database
-- `TailwindCSS` [↗](https://tailwindcss.com/) as styling framework
-- `Prisma` [↗](https://www.typescriptlang.org/) as ORM to manage the database
-- `axios` [↗](https://axios-http.com/) to facilitate requests
-- `jsonwebtoken` [↗](https://www.npmjs.com/package/jsonwebtoken) to persist user authentication
-- `uuid` [↗](https://www.npmjs.com/package/uuid) to generate random IDs
+### how to run
+honestly, it's worth the trouble. but if you really want to, follow along:
 
-<div style="display: inline_block" align="center"><br>
-  <a href="https://www.typescriptlang.org/" target="_blank">
-  <img align="center" title="Typescript" alt="Typescript" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045174-aeefe104-3966-491c-8d95-23f43050dbd0.svg"></a>
-  <a href="https://nextjs.org/" target="_blank">
-  <img align="center" title="NextJS" alt="NextJS" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045161-7fb9fce5-a974-4c57-8770-084f35765ef6.svg"></a>
-  <a href="https://www.postgresql.org/" target="_blank">
-  <img align="center" title="PostgreSQL" alt="PostgreSQL" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/185008096-730b7d2b-2e85-4f96-87d6-38398e77477c.svg"></a>
-  <a href="https://tailwindcss.com/" target="_blank">
-  <img align="center" alt="TailwindCSS" title="TailwindCSS" height="30" width="40" src="https://user-images.githubusercontent.com/87823281/183668264-c44f271e-4719-461f-8112-fee8e558cac0.svg"></a>
-  <a href="https://www.prisma.io/" target="_blank">
-  <img align="center" title="Prisma" alt="Prisma" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/185008303-c8893e5a-2183-4cc6-9a5a-099958265650.svg"></a>
-</div>
+1. you'll need a local postgresql database. so pull a docker instance, it's easier
+2. create a `.env` file and set `DATABASE_URL` to your local postgresql connection url
+3. run `npx prisma migrate dev` to create the necessary tables in the database
+5. clone the repository w/ `git clone git@github.com:antoniopataro/e-commerce-refactor.git`
+6. install its dependencies w/ npm install or other package manager you might wanna use
+7. either run npm run dev for a development version or npm run build && npm start for a production preview version
+
+you'll probably see no products. there's a primitive admin interface i've created to manage products, try accessing it.
+
+if something breaks, feel free to make a pr.
+
+### stack and dependencies:
+
+- jsonwebtoken
+- next.js
+- postgresql
+- prisma
+- tailwindcss w/ postcss
+- typescript
