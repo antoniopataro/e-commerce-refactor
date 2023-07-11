@@ -1,6 +1,6 @@
 https://user-images.githubusercontent.com/87823281/185812012-8a9070a2-fb4f-49fb-96db-d9beade7f0ab.mp4
 
-# e-commerce refactor 🛒
+# e-commerce refactor
 
 when i first started learning web development, e-commerces were the big thing to test your skills. due to that, i decided to build one myself.
 
