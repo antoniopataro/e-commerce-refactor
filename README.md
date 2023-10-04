@@ -22,7 +22,6 @@ You'll probably see no data. No, there's no seed command. However, there's a pri
 If something breaks, feel free to make a pull request.
 
 #### Tech:
-
 - jsonwebtoken;
 - next.js;
 - postgresql;
